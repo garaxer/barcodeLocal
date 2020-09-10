@@ -1,0 +1,50 @@
+{
+  "name": "barcodeserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "barcodeServer.js",
+  "scripts": {
+    "test": "env-cmd -f ./.env mocha",
+    "start2": "nodemon index.js",
+    "start3": "env-cmd -f ./.env nodemon src/app.js",
+    "startm": "env-cmd -f ./mongo/.env nodemon mongo/index.js",
+    "start:docker": "nodemon --legacy-watch index.js",
+    "start": "env-cmd -f ./.env nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.14",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "file-url": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.3",
+    "pg": "^8.2.1",
+    "sqlite3": "^5.0.0",
+    "typescript": "^3.9.7",
+    "uuid": "^8.2.0",
+    "validator": "^13.0.0",
+    "wkhtmltopdf": "^0.3.4"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "chai": "*",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "mocha": "*",
+    "prettier": "^2.0.5",
+    "supertest": "^4.0.2"
+  }
+}

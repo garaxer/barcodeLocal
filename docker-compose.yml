@@ -1,0 +1,32 @@
+version: "3"
+services:
+  client:
+    stdin_open: true
+    build: ./client
+    image: garybagn/barcodegen_client
+    expose:
+      - 3000
+    ports:
+      - 80:3000
+    volumes:
+      - ./client:/app/client
+    environment:
+      REACT_APP_API_URL: "http://localhost:8080/api"
+      CHOKIDAR_USEPOLLING: "true"
+  server:
+    build: ./server
+    image: garybagn/barcodegen
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    volumes:
+      - ./server/:/app/server/
+    environment:
+      JWT_KEY: Yourkey
+      PORT: 8080
+      DATABASE_URL: postgres://postgres:test123!@host.docker.internal:5432/postgres
+# docker-compose up -d
+# docker-compose down
+# docker ps
+# docker logs -f 4eaf0d9219b8
