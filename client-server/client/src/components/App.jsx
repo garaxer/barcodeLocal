@@ -54,7 +54,7 @@ export const App = ({ snackMessage, user, token }) => {
       <WaitForUser path="/profile" component={UserProfile} />
 
       <WaitForUser path="/companies" exact>
-        <Companies token={token}  />
+        <Companies token={token} />
       </WaitForUser>
 
       <WaitForUser path="/users" exact component={UserList} />
